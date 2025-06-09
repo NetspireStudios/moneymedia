@@ -3,6 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { ExternalLink, Mail, MapPin, Phone } from 'lucide-react'
+import Image from 'next/image'
 
 const Footer = () => {
   const socialLinks = [
@@ -54,14 +55,14 @@ const Footer = () => {
             viewport={{ once: true }}
             className="lg:col-span-2"
           >
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-neon-500 rounded-xl flex items-center justify-center">
-                <span className="text-black font-bold text-xl">IM</span>
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-white text-glow">Internet Money Media</h3>
-                <p className="text-neon-400 text-sm">Digital Content Creation</p>
-              </div>
+            <div className="flex items-center mb-6">
+              <Image
+                src="/images/internetmoneymedia.svg"
+                alt="Internet Money Media Logo"
+                width={150}
+                height={50}
+                className="h-12 w-auto"
+              />
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed max-w-md">
               Transform your brand with professional video content, social media strategies, 

@@ -56,7 +56,7 @@ const ServicesSection = () => {
   return (
     <section id="services" className="relative py-20 bg-black overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 grid-pattern opacity-20"></div>
+              <div className="absolute inset-0 grid-pattern opacity-20"></div>
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-neon-500/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-neon-400/5 rounded-full blur-3xl"></div>
 
@@ -102,12 +102,12 @@ const ServicesSection = () => {
               </motion.div>
 
               {/* Title */}
-              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-neon-400 transition-colors duration-300">
+                              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-neon-400 transition-colors duration-300">
                 {service.title}
               </h3>
 
               {/* Description */}
-              <p className="text-gray-300 mb-6 leading-relaxed">
+                              <p className="text-gray-300 mb-6 leading-relaxed">
                 {service.description}
               </p>
 

@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
+import Image from 'next/image'
 import { Button } from './ui/button'
 import { smoothScrollTo } from '@/lib/utils'
 
@@ -93,14 +94,16 @@ const Navigation = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
-            className="flex items-center space-x-2"
+            className="flex items-center"
           >
-            <div className="w-10 h-10 bg-neon-500 rounded-lg flex items-center justify-center">
-              <span className="text-black font-bold text-xl">IM</span>
-            </div>
-            <span className="text-white font-bold text-xl hidden sm:block text-glow">
-              Internet Money Media
-            </span>
+            <Image
+              src="/images/internetmoneymedia.svg"
+              alt="Internet Money Media Logo"
+              width={120}
+              height={40}
+              className="h-8 w-auto sm:h-10"
+              priority
+            />
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -119,12 +122,12 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* CTA */}
+          {/* CTA Button */}
           <div className="hidden lg:flex items-center">
             <motion.div
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.6 }}
+              transition={{ delay: 0.5 }}
             >
               <Button
                 variant="glow"
@@ -137,15 +140,19 @@ const Navigation = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <motion.button
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="lg:hidden text-white p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="lg:hidden"
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </motion.button>
+            <button
+              className="text-white hover:text-neon-400 p-2"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </motion.div>
         </div>
 
         {/* Mobile Menu */}
